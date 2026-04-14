@@ -1,0 +1,46 @@
+models:
+  - key: openai_gpt_45
+    display_name: "GPT-4.5"
+    provider: openai
+    api_model_id: "gpt-4.5"
+    modality: "vision+text"
+    enabled: true
+
+  - key: anthropic_opus_46
+    display_name: "Claude Opus 4.6"
+    provider: anthropic
+    api_model_id: "claude-opus-4-6"
+    modality: "vision+text"
+    enabled: true
+
+  - key: google_gemini_30_pro
+    display_name: "Gemini 3.0 Pro"
+    provider: google
+    api_model_id: "gemini-3.0-pro"
+    modality: "vision+text"
+    enabled: true
+
+  - key: meta_llama4_maverick
+    display_name: "Llama 4 Maverick"
+    provider: meta
+    api_model_id: "llama-4-maverick"
+    modality: "vision+text"
+    enabled: true
+
+  - key: mistral_multimodal_latest
+    display_name: "Mistral (latest multimodal)"
+    provider: mistral
+    api_model_id: "mistral-multimodal-latest"
+    modality: "vision+text"
+    enabled: true
+
+  - key: qwen_vl_latest
+    display_name: "Qwen-VL (latest)"
+    provider: qwen
+    api_model_id: "qwen-vl-latest"
+    modality: "vision+text"
+    enabled: true
+
+notes:
+  - "Replace api_model_id values with exact deployed endpoint names before final run."
+  - "Keep display_name fixed for paper/report consistency."
