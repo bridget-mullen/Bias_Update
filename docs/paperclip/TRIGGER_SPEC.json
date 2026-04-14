@@ -1,0 +1,65 @@
+{
+  "project": "bias_update_2026",
+  "version": "v1",
+  "dispatchMode": "paperclip_wake",
+  "heartbeatMode": "monitor_only",
+  "stages": [
+    {
+      "name": "data_prep",
+      "wakeEvent": "wake:data_prep:start",
+      "clickupTaskName": "[Agent] Data/Prep",
+      "outputs": [
+        "results/dataset_manifest.csv",
+        "results/smoke_manifest.csv"
+      ]
+    },
+    {
+      "name": "model_runner",
+      "wakeEvent": "wake:model_runner:start",
+      "clickupTaskName": "[Agent] Model Runner",
+      "outputs": [
+        "results/model_outputs_raw.jsonl",
+        "results/model_outputs_clean.csv"
+      ]
+    },
+    {
+      "name": "evaluation",
+      "wakeEvent": "wake:evaluation:start",
+      "clickupTaskName": "[Agent] Evaluation",
+      "outputs": [
+        "results/scores.csv",
+        "results/scoring_notes.md"
+      ]
+    },
+    {
+      "name": "stats",
+      "wakeEvent": "wake:stats:start",
+      "clickupTaskName": "[Agent] Stats",
+      "outputs": [
+        "results/metrics_summary.csv",
+        "results/delta_vs_baseline.csv"
+      ]
+    },
+    {
+      "name": "reporting",
+      "wakeEvent": "wake:reporting:start",
+      "clickupTaskName": "[Agent] Reporting",
+      "outputs": [
+        "results/findings_memo.md",
+        "results/figures"
+      ]
+    },
+    {
+      "name": "ppt_builder",
+      "wakeEvent": "wake:ppt_builder:start",
+      "clickupTaskName": "[Agent] PowerPoint Builder",
+      "outputs": [
+        "results/Bias_Update_2026_Pilot.pptx"
+      ]
+    }
+  ],
+  "retryPolicy": {
+    "maxAttempts": 3,
+    "backoffMinutes": [2, 5, 15]
+  }
+}
